@@ -24,7 +24,7 @@ class Ecuaciones
           puts 'P(t) = ' + p_zero.to_s + 'e^' + k.to_s + 't'
         end
         print '¿Desea dar un valor a t para saber la cantidad de ' + pb
-        puts 'en ese tiempo?'
+        puts ' en ese tiempo?'
         cant_pb = gets.chomp
         if cant_pb.eql? 'si'
           puts 'Ingrese la cantidad de horas:'
@@ -32,6 +32,16 @@ class Ecuaciones
           puts 'La cantidad de ' + pb + ' en ' + cant_horas_pb + ' horas es:'
           p_cant = (p_zero * Math.exp(1)**(k*cant_horas_pb.to_i)).round
           puts 'P(' + cant_horas_pb + ') = ' +  p_cant.to_s + ' ' + pb
+          print '¿Desea conocer el tiempo que debe trasncurrir' 
+          puts 'para que la poblacion se duplique, triplique, etc.. ?'
+          tpx = gets.chomp
+          if tpx.eql? 'si'
+            puts "Si quiere la poblacion dublique ingrese 2 \nsi quiere que triplique 3, etc..."
+            pingre = gets.chomp.to_f
+            tiempo_poblacional = (Math.log(pingre)/k).to_i
+            puts 'Para que la poblacion se multiplique X'+(pingre.to_i).to_s+' es: '+tiempo_poblacional.to_s+' horas'
+          else
+          end
         end
       else
         k = Math.log(p_uno / p_zero).round(4)
@@ -44,6 +54,16 @@ class Ecuaciones
           puts 'La cantidad de ' + pb + ' en ' + cant_horas_pb + ' horas es:'
           p_cant = (p_zero * Math.exp(1)**(k*cant_horas_pb.to_i)).round
           puts 'P(' + cant_horas_pb + ') = ' +  p_cant.to_s + ' ' + pb
+          print '¿Desea conocer el tiempo que debe trasncurrir' 
+          puts 'para que la poblacion se duplique, triplique, etc.. ?'
+          tpx = gets.chomp
+           if tpx.eql? 'si'
+            puts "Si quiere la poblacion dublique ingrese 2 \nsi quiere que triplique 3, etc..."
+            pingre = gets.chomp.to_f
+            tiempo_poblacional = (Math.log(pingre)/k).to_i
+            puts 'Para que la poblacion se multiplique X'+(pingre.to_i).to_s+' es: '+tiempo_poblacional.to_s+' horas'
+          else
+          end
         else
           puts 'No dio valores para la ecuacion.'
         end
