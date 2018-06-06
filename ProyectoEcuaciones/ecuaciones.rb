@@ -33,13 +33,13 @@ class Ecuaciones
           p_cant = (p_zero * Math.exp(1)**(k*cant_horas_pb.to_i)).round
           puts 'P(' + cant_horas_pb + ') = ' +  p_cant.to_s + ' ' + pb
           print '¿Desea conocer el tiempo que debe trasncurrir' 
-          puts 'para que la poblacion se duplique, triplique, etc.. ?'
+          puts ' para que la poblacion se duplique, triplique, etc.. ?'
           tpx = gets.chomp
           if tpx.eql? 'si'
             puts "Si quiere la poblacion dublique ingrese 2 \nsi quiere que triplique 3, etc..."
             pingre = gets.chomp.to_f
             tiempo_poblacional = (Math.log(pingre)/k).to_i
-            puts 'Para que la poblacion se multiplique X'+(pingre.to_i).to_s+' es: '+tiempo_poblacional.to_s+' horas'
+            puts 'El tiempo para que la poblacion se multiplique X'+(pingre.to_i).to_s+' es: '+tiempo_poblacional.to_s+' horas'
           else
           end
         end
@@ -55,13 +55,13 @@ class Ecuaciones
           p_cant = (p_zero * Math.exp(1)**(k*cant_horas_pb.to_i)).round
           puts 'P(' + cant_horas_pb + ') = ' +  p_cant.to_s + ' ' + pb
           print '¿Desea conocer el tiempo que debe trasncurrir' 
-          puts 'para que la poblacion se duplique, triplique, etc.. ?'
+          puts ' para que la poblacion se duplique, triplique, etc.. ?'
           tpx = gets.chomp
            if tpx.eql? 'si'
             puts "Si quiere la poblacion dublique ingrese 2 \nsi quiere que triplique 3, etc..."
             pingre = gets.chomp.to_f
             tiempo_poblacional = (Math.log(pingre)/k).to_i
-            puts 'Para que la poblacion se multiplique X'+(pingre.to_i).to_s+' es: '+tiempo_poblacional.to_s+' horas'
+            puts 'El tiempo para que la poblacion se multiplique X'+(pingre.to_i).to_s+' es: '+tiempo_poblacional.to_s+' horas'
           else
           end
         else
