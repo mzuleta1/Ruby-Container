@@ -4,12 +4,8 @@ end
 # Leap
 class Year
   def self.leap?(year)
-    if (year % 400).zero?
-      true
-    elsif (year % 4).zero? && (year % 100) != 0
-      true
-    else
-      false
-    end
+    return true if (year % 400).zero?
+    return true if (year % 4).zero? && (year % 100).nonzero?
+    false
   end
 end

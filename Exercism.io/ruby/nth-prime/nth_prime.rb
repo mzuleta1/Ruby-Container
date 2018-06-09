@@ -4,20 +4,17 @@ end
 # Prime
 class Prime
   def self.nth(num)
-    es_primo = true
-    cant_mostrados = 1
-    n = 3
-      while(cant_mostrados < num)
-        a = (2..(n + 2)).to_a
-        a.each do |x|
-          es_primo = false if  n % x == 0
-        end
-        if es_primo
-          cant_mostrados+=1
-          print cant_mostrados.to_s +": "+n.to_s
-        end
-        n+=2
-      end
+    raise ArgumentError if num.zero? || num < 0
+    count = 0
+    n = 2
+    while count != num
+      count += 1 unless prime?(n)
+      n += 1
+    end
+    n - 1
+  end
+
+  def self.prime?(num)
+    (2..Math.sqrt(num)).any? { |x| (num % x).zero? }
   end
 end
-Prime.nth(10)
