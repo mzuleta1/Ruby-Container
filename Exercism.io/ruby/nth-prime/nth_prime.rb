@@ -4,7 +4,7 @@ end
 # Prime
 class Prime
   def self.nth(num)
-    raise ArgumentError if num.zero? || num < 0
+    raise ArgumentError if num <= 0
     count = 0
     n = 2
     while count != num
@@ -14,7 +14,9 @@ class Prime
     n - 1
   end
 
-  def self.prime?(num)
-    (2..Math.sqrt(num)).any? { |x| (num % x).zero? }
+  class << self
+    private def prime?(num)
+      (2..Math.sqrt(num)).any? { |x| (num % x).zero? }
+    end
   end
 end
