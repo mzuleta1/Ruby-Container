@@ -8,8 +8,10 @@ class SumOfMultiples
   end
 
   def to(limit)
-    sum = 0
-    (0...limit).each { |i| sum += i if @mul.any? { |j| (i % j).zero? } }
-    sum
+    (0...limit).inject { |sum, i| multi(i) ? sum + i : sum }
+  end
+
+  def multi(num)
+    @mul.any? { |j| (num % j).zero? }
   end
 end
